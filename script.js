@@ -1,7 +1,7 @@
 import { User } from "./user.js";
 
 const form = document.querySelector("form");
-
+const issues = [];
 const initApp = () => {};
 
 const handleSubmit = (event) => {
@@ -13,8 +13,8 @@ const handleSubmit = (event) => {
   const caption = data.get("caption");
   const description = data.get("description");
   const user = new User(email, caption, description);
-
-  console.log(user);
+  issues.push(user);
+  console.log(issues);
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
